@@ -1,26 +1,13 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import AllScreenshotTests from './ScreenshotTests';
+import { barChartTestsArray } from './ScreenshotTests/BarChartTests';
+import { BarChart } from 'react-gifted-charts';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  // return <BarChart data={[{value:4},{value:7}]} />
+  // return barChartTestsArray[0].component()
+  // return <div>hi</div>
+  return <AllScreenshotTests />;
 }
 
 export default App;
