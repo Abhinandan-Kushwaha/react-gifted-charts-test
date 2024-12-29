@@ -1,5 +1,5 @@
 import React from 'react';
-import {BarChart, yAxisSides} from 'react-gifted-charts';
+import {BarChart, barDataItem, yAxisSides} from 'react-gifted-charts';
 
 const positiveData = [{value: 10}, {value: 15}, {value: 6}, {value: 8}]
 const mixedData = [{value: 10}, {value: 15}, {value: -6}, {value: 8}, {value: -4}]
@@ -497,6 +497,64 @@ const barAxesAndLabels56 = () => (
   />
 );
 
+const barAxesAndLabels57 = () => (
+  <BarChart
+    data={positiveData}
+    autoCenterTooltip
+    focusedBarIndex={2}
+    renderTooltip={(item: barDataItem) => (
+      <div>{item.value}</div>
+    )}
+  />
+);
+
+const barAxesAndLabels58 = () => (
+  <BarChart
+    data={mixedData}
+    autoCenterTooltip
+    focusedBarIndex={2}
+    renderTooltip={(item: barDataItem) => (
+      <div>{item.value}</div>
+    )}
+  />
+);
+
+const barAxesAndLabels59 = () => (
+  <BarChart
+    data={mixedData}
+    autoCenterTooltip
+    focusedBarIndex={0}
+    renderTooltip={(item: barDataItem) => (
+      <div>{item.value}</div>
+    )}
+  />
+);
+
+const barAxesAndLabels60 = () => (
+  <BarChart
+    data={mixedData}
+    barMarginBottom={20}
+    autoCenterTooltip
+    focusedBarIndex={2}
+    renderTooltip={(item: barDataItem) => (
+      <div>{item.value}</div>
+    )}
+  />
+);
+
+const barAxesAndLabels61 = () => (
+  <BarChart
+    data={mixedData}
+    barMarginBottom={20}
+    autoCenterTooltip
+    focusedBarIndex={0}
+    renderTooltip={(item: barDataItem) => (
+      <div>{item.value}</div>
+    )}
+  />
+);
+
+
 export const barChartTestsArray = [
   {
     component: barAxesAndLabels1,
@@ -874,5 +932,40 @@ export const barChartTestsArray = [
       'BarChart: "mostNegativeValue" and "noOfSectionsBelowXAxis" should work together',
     id: 'barAxesAndLabels56',
     description: JSON.stringify(barAxesAndLabels56().props),
+  },
+  {
+    component: barAxesAndLabels57,
+    title:
+      'BarChart: Tooltip should be rendered at proper location for a Bar chart with only positive values',
+    id: 'barAxesAndLabels57',
+    description: JSON.stringify(barAxesAndLabels57().props),
+  },
+  {
+    component: barAxesAndLabels58,
+    title:
+      'BarChart: Tooltip for a +ve Bar should be rendered at proper location for a Bar chart with both +ve and -ve values',
+    id: 'barAxesAndLabels58',
+    description: JSON.stringify(barAxesAndLabels58().props),
+  },
+  {
+    component: barAxesAndLabels59,
+    title:
+      'BarChart: Tooltip for a -ve Bar should be rendered at proper location for a Bar chart with both +ve and -ve values',
+    id: 'barAxesAndLabels59',
+    description: JSON.stringify(barAxesAndLabels59().props),
+  },
+  {
+    component: barAxesAndLabels60,
+    title:
+      'BarChart: Tooltip for a +ve Bar should be rendered at proper location for a Bar chart with both +ve and -ve values and a BarMarginBottom',
+    id: 'barAxesAndLabels60',
+    description: JSON.stringify(barAxesAndLabels60().props),
+  },
+  {
+    component: barAxesAndLabels61,
+    title:
+      'BarChart: Tooltip for a -ve Bar should be rendered at proper location for a Bar chart with both +ve and -ve values and a BarMarginBottom',
+    id: 'barAxesAndLabels61',
+    description: JSON.stringify(barAxesAndLabels61().props),
   },
 ];

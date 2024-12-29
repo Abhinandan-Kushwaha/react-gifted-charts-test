@@ -1,5 +1,5 @@
 import React from 'react';
-import {LineChart, yAxisSides} from 'react-gifted-charts';
+import {LineChart, lineDataItem, yAxisSides} from 'react-gifted-charts';
 
 const positiveData = [{value: 10}, {value: 15}, {value: 6}, {value: 8}];
 const mixedData = [
@@ -522,6 +522,20 @@ const lineAxesAndLabels55 = () => (
   />
 );
 
+export const lineAxesAndLabels56 = () => (
+  <LineChart
+    data={[
+      {
+        value: 8,
+        dataPointLabelComponent: (item: lineDataItem) => (
+          <div>{item?.value}</div>
+        ),
+      },
+      ...positiveData,
+    ]}
+  />
+);
+
 // export const lineAxesAndLabels56 = () => (
 //   <LineChart
 //     data={positiveData}
@@ -959,6 +973,13 @@ export const lineChartTestsArray = [
     id: 'lineAxesAndLabels55',
     description: JSON.stringify(lineAxesAndLabels55().props),
   },
+  {
+    component: lineAxesAndLabels56,
+    title: 'LineChart: Custom data point label component should work',
+    id: 'lineAxesAndLabels56',
+    description: JSON.stringify(lineAxesAndLabels56().props),
+  },
+  
   // {
   //   component: lineAxesAndLabels56,
   //   title: 'LineChart: pointer should work',
