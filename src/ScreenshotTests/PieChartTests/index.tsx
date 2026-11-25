@@ -1,5 +1,5 @@
 import React from 'react';
-import {PieChart} from 'react-gifted-charts';
+import {PieChart, pieDataItem} from 'react-gifted-charts';
 
 const data = [{value: 10}, {value: 15}, {value: 6}, {value: 8}];
 
@@ -74,7 +74,7 @@ const pie20 = () => (
   <PieChart
     data={data}
     showExternalLabels
-    externalLabelComponent={item => <text>{item?.value}</text>}
+    externalLabelComponent={(item?: pieDataItem) => <text>{item?.value}</text>}
   />
 );
 
