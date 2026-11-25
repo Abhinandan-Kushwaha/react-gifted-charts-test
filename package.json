@@ -3,19 +3,23 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@react-spring/web": "^9.7.5",
+    "@react-spring/web": "^10.1.2",
+    "@testing-library/dom": "^10.4.2",
     "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
+    "@testing-library/react": "^16.3.3",
+    "@testing-library/user-event": "^14.6.13",
     "@types/jest": "^27.5.2",
-    "@types/node": "^16.18.119",
-    "@types/react": "^18.3.12",
-    "@types/react-dom": "^18.3.1",
+    "@types/node": "^16.18.126",
+    "@types/react": "^18.3.32",
+    "@types/react-dom": "^18.3.7",
+    "gifted-charts-core": "^0.1.85",
+    "html-to-image": "^1.11.13",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-gifted-charts": "^0.0.11",
+    "react-native-web": "^0.21.4",
     "react-scripts": "5.0.1",
-    "screenshot-test-react": "^0.0.2",
+    "screenshot-test-react": "^0.0.3",
     "typescript": "^4.9.5",
     "web-vitals": "^2.1.4"
   },
@@ -24,6 +28,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "ss": "rm -rf node_modules package-lock.json && npm i --legacy-peer-deps && npm run build && npm start --reset-cache",
     "ss-test": "cd ./node_modules/screenshot-test-server/dist && node server.js"
   },
   "eslintConfig": {
@@ -46,5 +51,8 @@
   },
   "overrides": {
     "react-refresh": "0.11.0"
+  },
+  "devDependencies": {
+    "ajv": "^8.20.0"
   }
 }

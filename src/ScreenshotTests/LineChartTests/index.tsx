@@ -246,7 +246,7 @@ const lineAxesAndLabels21 = () => (
     textFontSize={14}
     textColor={'blue'}
     textShiftY={-10}
-    formatYLabel={label => Number(label) * 2 + '/2'}
+    formatYLabel={(label:string) => Number(label) * 2 + '/2'}
   />
 );
 const lineAxesAndLabels22 = () => (
@@ -256,7 +256,7 @@ const lineAxesAndLabels22 = () => (
     textFontSize={14}
     textColor={'blue'}
     textShiftY={-10}
-    formatYLabel={label => Number(label) * 2 + '/2'}
+    formatYLabel={(label:string) => Number(label) * 2 + '/2'}
     yAxisLabelPrefix="$"
     yAxisLabelSuffix="k"
     yAxisLabelWidth={60}
